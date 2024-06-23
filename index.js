@@ -2,7 +2,7 @@ const TelegramApi = require('node-telegram-bot-api');
 const { handleStartCommand, handleGameCommand, handleReactCommand, handleUnknownCommand } = require('./commands');
 const { handleCallbackQuery } = require('./game');
 
-const token = '7432200895:AAE5lk_EZBO17YRvx5da0W88WPtvpsa8PZI';
+const token = '';
 const bot = new TelegramApi(token, { polling: true });
 
 bot.setMyCommands([
