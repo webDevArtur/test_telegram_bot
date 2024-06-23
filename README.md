@@ -52,7 +52,3 @@
 
 - [Telegram Bot API](https://core.telegram.org/bots/api)
 - [node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api)
-
-## Контактная информация
-
-По всем вопросам и предложениям, пожалуйста, обращайтесь по адресу [your-email@example.com](mailto:your-email@example.com).
