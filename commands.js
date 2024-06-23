@@ -1,8 +1,19 @@
 const { sendReactQuestion } = require('./game');
 
-const handleStartCommand = async (bot, chatId, username) => {
+function getUserName(from) {
+    if (from.username) {
+        return from.username;
+    }
+    if (from.first_name && from.last_name) {
+        return `${from.first_name} ${from.last_name}`;
+    }
+    return from.first_name || from.last_name || 'пользователь';
+}
+
+const handleStartCommand = async (bot, chatId, from) => {
+    const userName = getUserName(from);
     await bot.sendPhoto(chatId, './img.png');
-    return bot.sendMessage(chatId, 'Привет, ' + username + '!');
+    return bot.sendMessage(chatId, 'Привет, ' + userName + '!');
 };
 
 const handleGameCommand = async (bot, chatId) => {

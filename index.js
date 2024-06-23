@@ -15,15 +15,16 @@ const userScores = {};
 
 bot.on('message', async msg => {
     const chatId = msg.chat.id;
+    const text = msg.text;
 
     if (text === '/start') {
-        await handleStartCommand(bot, chatId, msg.from.username);
+        await handleStartCommand(bot, chatId, msg.from);
     } else if (text === '/game') {
         await handleGameCommand(bot, chatId);
     } else if (text === '/react') {
         await handleReactCommand(bot, chatId, userScores);
     } else {
-        await handleUnknownCommand(bot, chatId, msg.text);
+        await handleUnknownCommand(bot, chatId, text);
     }
 });
 
